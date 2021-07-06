@@ -1,0 +1,313 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Documentação da Oficina 2.0",
+        "description": "Essa é a documentação da API Rest que foi criada para a aplicação da oficina 2.0 do teste da codificar.",
+        "version": "1.0.0",
+        "contact": {
+            "email": "pedro.barbosa.dev@gmail.com"
+        }
+    },
+    "paths": {
+        "/sellers": {
+            "post": {
+                "tags": [
+                    "Sellers"
+                ],
+                "summary": "Criar o registro de um vendedor",
+                "description": "Essa rota POST é utilizada para a criação de uma conta de um vendedor dentro da aplicação.",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "cpf": {
+                                        "type": "string"
+                                    }
+                                },
+                                "example": {
+                                    "name": "Pedro Barbosa",
+                                    "cpf": "999.999.999-99"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Registro do vendedor criado com sucesso."
+                    },
+                    "400": {
+                        "description": "Erro no registro do vendedor. CPF já está em uso"
+                    },
+                    "500": {
+                        "description": "Erro interno da aplicação"
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "Sellers"
+                ],
+                "summary": "Listar vendedores da oficina",
+                "description": "Listar todos os vendedores que foram registrados na oficina.",
+                "responses": {
+                    "200": {
+                        "description": "O vendedor foi registrado com sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "name": {
+                                                "type": "string"
+                                            },
+                                            "cpf": {
+                                                "type": "string"
+                                            },
+                                            "updated_at": {
+                                                "type": "date"
+                                            },
+                                            "cretead_at": {
+                                                "type": "date"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Sellers"
+                ],
+                "summary": "Atualizar os dados vendendor de um vendedor",
+                "description": "Listar todos os vendedores que foram registrados na oficina."
+            },
+            "patch": {
+                "tags": [
+                    "Sellers"
+                ],
+                "summary": "Atualizar um dado especifico do nosso vendedor",
+                "description": "Listar todos os vendedores que foram registrados na oficina."
+            },
+            "delete": {
+                "tags": [
+                    "Sellers"
+                ],
+                "summary": "Deletar um vendedor",
+                "description": "Deletar um vendedor de dentro do nosso registro"
+            }
+        },
+        "/clients": {
+            "post": {
+                "tags": [
+                    "Clients"
+                ],
+                "summary": "Criar o registro de um cliente",
+                "description": "Essa rota POST é utilizada para a criação de uma conta de um cliente dentro da aplicação.",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "cpf": {
+                                        "type": "string"
+                                    }
+                                },
+                                "example": {
+                                    "name": "Pedro Barbosa",
+                                    "cpf": "999.999.999-99"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Registro do cliente criado com sucesso."
+                    },
+                    "400": {
+                        "description": "Erro no registro do cliente. CPF já está em uso"
+                    },
+                    "500": {
+                        "description": "Erro interno da aplicação"
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "Clients"
+                ],
+                "summary": "Listar clientes da oficina",
+                "description": "Listar todos os clientes que foram registrados na oficina.",
+                "responses": {
+                    "200": {
+                        "description": "O cliente foi registrado com sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "name": {
+                                                "type": "string"
+                                            },
+                                            "cpf": {
+                                                "type": "string"
+                                            },
+                                            "updated_at": {
+                                                "type": "date"
+                                            },
+                                            "created_at": {
+                                                "type": "date"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Clients"
+                ],
+                "summary": "Atualizar os dados de um client",
+                "description": "Listar todos os clientes que foram registrados na oficina."
+            },
+            "patch": {
+                "tags": [
+                    "Clients"
+                ],
+                "summary": "Atualizar um dado especifico do nosso cliente",
+                "description": "Listar todos os clientes que foram registrados na oficina."
+            },
+            "delete": {
+                "tags": [
+                    "Clients"
+                ],
+                "summary": "Deletar um cliente",
+                "description": "Deletar um cliente de dentro do nosso registro"
+            }
+        },
+        "/budgets": {
+            "post": {
+                "tags": [
+                    "Budgets"
+                ],
+                "summary": "Criar o registro de um orçamento",
+                "description": "Essa rota POST é utilizada para a criação de um orçamento dentro da aplicação.",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "cpf": {
+                                        "type": "string"
+                                    },
+                                    "client_id": {
+                                        "type": "uuid"
+                                    },
+                                    "user_id": {
+                                        "type": "uuid"
+                                    },
+                                    "description": {
+                                        "type": "string"
+                                    },
+                                    "value": {
+                                        "type": "string"
+                                    }
+                                },
+                                "example": {
+                                    "value": 30000,
+                                    "description": "Reparo no carburador",
+                                    "user_id": "2bc37496-dcdf-4fe3-9987-cbc142b172b5",
+                                    "seller_id": "be373788-fe8e-4537-a177-6f5d22da177e"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Registro do orçamento criado com sucesso."
+                    },
+                    "400": {
+                        "description": "Erro no registro do orçamento. CPF já está em uso"
+                    },
+                    "500": {
+                        "description": "Erro interno da aplicação"
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "Budgets"
+                ],
+                "summary": "Listar orçamentos da oficina",
+                "description": "Listar todos os orçamentos que foram registrados na oficina.",
+                "responses": {
+                    "200": {
+                        "description": "O Orçamento foi registrado com sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "id": "8fc389e0-70ab-4044-b7a6-47ad8ab5fdf1",
+                                            "description": "Reparo no carburador",
+                                            "value": 30000,
+                                            "created_at": "2021-07-06T03:36:52.778Z"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Budgets"
+                ],
+                "summary": "Atualizar os dados de um orçamento",
+                "description": "Listar todos os orçamentos que foram registrados na oficina."
+            },
+            "patch": {
+                "tags": [
+                    "Budgets"
+                ],
+                "summary": "Atualizar um dado especifico do nosso cliente",
+                "description": "Listar todos os orçamentos que foram registrados na oficina."
+            },
+            "delete": {
+                "tags": [
+                    "Budgets"
+                ],
+                "summary": "Deletar um cliente",
+                "description": "Deletar um orçamento de dentro do nosso registro"
+            }
+        }
+    }
+}
